@@ -1,0 +1,28 @@
+<section class="section">
+    <div class="video-section">
+        <video class="video" autoplay muted loop src="/video.mp4"></video>
+    </div>
+</section>
+
+<style>
+    .section {
+		width: 100vw;
+		height: 100vh;
+		position: relative;
+		z-index: 10;
+		overflow: hidden;
+	}
+
+	.video-section {
+        position: absolute;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+	}
+
+	.video {
+		object-fit: cover;
+		width: 100vw;
+		height: 100vh;
+	}
+</style>
