@@ -1,0 +1,30 @@
+---
+const { imagen, title, subtitle } = Astro.props;
+---
+
+
+<div class="case-studies-item">
+    <div>
+        <slot name="picture" />
+    <div>
+        <h2>{title}</h2>
+        <p>{subtitle}</p>
+    </div>
+</div>
+
+<style>
+    
+    .case-studies-item {
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        color: #252422;
+    }
+
+    .case-studies-item p {
+        font-weight: 500;
+        width: 50%;
+        font-size: 14px;
+    }
+</style>
