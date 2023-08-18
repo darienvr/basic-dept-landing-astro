@@ -6,24 +6,24 @@ import FeaturedItem from "./FeaturedItem.astro";
     <h2>Featured Engagements</h2>
     <div>
         <FeaturedItem 
-            title="Google" 
+            title="GOOGLE" 
             text="Our embedded partnership with Google is as deep as it gets. We’re the lead creative agency for Google Store and provide strategy, design, and prototyping to other divisions. Learn more about our partnership here"
             url="http://cdn.sanity.io/images/8nn8fua5/production/7121121ed910b145bdb6df487966a7888c2eb7c3-272x92.svg?w=720&fm=webp&q=65"
         />
         <FeaturedItem 
-            title="Google" 
+            title="KFC" 
             text="Our embedded partnership with Google is as deep as it gets. We’re the lead creative agency for Google Store and provide strategy, design, and prototyping to other divisions. Learn more about our partnership here"
-            url="https://cdn.sanity.io/images/8nn8fua5/production/7121121ed910b145bdb6df487966a7888c2eb7c3-272x92.svg?w=720&fm=webp&q=65"
+            url="https://cdn.sanity.io/images/8nn8fua5/production/09a68ec6d03469bfd5bbb9726a58225acb900ae2-128x42.svg?w=720&fm=webp&q=65"
         />
         <FeaturedItem 
-            title="Google" 
+            title="WILSON" 
             text="Our embedded partnership with Google is as deep as it gets. We’re the lead creative agency for Google Store and provide strategy, design, and prototyping to other divisions. Learn more about our partnership here"
-            url="https://cdn.sanity.io/images/8nn8fua5/production/7121121ed910b145bdb6df487966a7888c2eb7c3-272x92.svg?w=720&fm=webp&q=65"
+            url="https://cdn.sanity.io/images/8nn8fua5/production/fbb650ce74c1849cb4da2d9951fad89149494cc9-171x42.svg?w=720&fm=webp&q=65"
         />
         <FeaturedItem 
-            title="Google" 
+            title="AT&T" 
             text="Our embedded partnership with Google is as deep as it gets. We’re the lead creative agency for Google Store and provide strategy, design, and prototyping to other divisions. Learn more about our partnership here"
-            url="https://cdn.sanity.io/images/8nn8fua5/production/7121121ed910b145bdb6df487966a7888c2eb7c3-272x92.svg?w=720&fm=webp&q=65"
+            url="https://cdn.sanity.io/images/8nn8fua5/production/b2624b2d49d9c14eec0cd30203c5eec0331eac42-42x42.svg?w=720&fm=webp&q=65"
         />
     </div>
 </section>
@@ -32,8 +32,7 @@ import FeaturedItem from "./FeaturedItem.astro";
 
     section {
         height: auto;
-        padding: 80px;
-        overflow-x: auto;
+        padding-left: 80px;
     }
 
     h2 {
@@ -45,8 +44,14 @@ import FeaturedItem from "./FeaturedItem.astro";
     }
 
     div{
+        overflow-x: auto;
         display: flex;
         gap: 20px;
+        cursor: grab;
+    }
+
+    div:active {
+        cursor: grabbing;
     }
 
 </style>
