@@ -1,0 +1,45 @@
+---
+const { url, title, text } = Astro.props;
+---
+
+<div>
+    <img src={url} alt="#" loading="lazy" />
+    <div>
+        <span />
+        <h3>{title}</h3>
+        <p>{text}</p>
+    </div>
+</div>
+
+<style>
+
+    div {
+        min-width: 435px;
+        height: auto;
+    }
+
+    img {
+        max-width: 120px;
+        height: auto;
+    }
+
+    span {
+        display: inline-block;
+        width: 20px;
+        height: 2.5px;
+        background-color: #000;
+    }
+
+    h3 {
+        padding: 60px 0 10px 0;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: #252422;
+    }
+
+    p{
+        font-size: 1.1rem;
+        width: 330px;
+    }
+
+</style>
