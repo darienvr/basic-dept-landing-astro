@@ -1,11 +1,17 @@
+---
+ const {image, title, date} = Astro.props;
+---
+
 <div class="news">
-    <img src="https://cdn.sanity.io/images/8nn8fua5/production/162fd00622e522dddacedbb98f34181c860a6bbd-1000x734.png?w=720&fm=webp&q=65" alt="#">
+    <div class="image-container">
+        <img src={image} alt="#">
+    </div>
     <div class="news-header">
         <div class="news-title">
-            <p>The new roadmap for auto brands</p>
-            <span>→</span>
+            <p>{title}</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><path d="M.1 7.5h14v2H.1z"></path><path d="m8.4 0 8.5 8.5-1.4 1.4L7 1.4 8.4 0z"></path><path d="m7 15.6 8.5-8.5 1.4 1.4L8.4 17 7 15.6z"></path></svg>
         </div>
-        <p>Press 8.1.23</p>
+        <p>Press {date}</p>
     </div>
 </div>
 
@@ -14,12 +20,35 @@
     .news {
         display: flex;
         gap: 20px;
-        border: 1px solid #000;
+        border-top: 1.5px solid #000;
         padding: 20px 0 70px 0;
     }
 
+    .news:hover {
+        cursor: pointer;
+    }
+
+    .news:hover img {
+        transform: scale(1);
+    }
+
+    .news:hover p {
+        text-decoration: underline;
+    }
+
+    .news:hover svg {
+        transform: translateX(20px);
+    }
+
+    .image-container {
+        width: 650px;
+        overflow: hidden;
+    }
+
     img {
-        width: 430px;
+        width: 100%;
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
     }
 
     .news-header {
@@ -32,7 +61,7 @@
     .news-title {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .news-title p {
@@ -43,8 +72,10 @@
         line-height: 1.1;
     }
 
-    span {
-        font-size: 3rem;
+    svg {
+        width: 30px;
+        transition: all 0.5s;
+        padding-top: 10px;
     }
 
     p {
