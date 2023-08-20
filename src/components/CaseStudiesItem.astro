@@ -4,9 +4,9 @@ const { title, subtitle } = Astro.props;
 
 
 <div class="case-studies-item">
-    <div>
+    <div class="image-container">
         <slot name="picture" />
-    <div>
+    </div>
         <h2>{title}</h2>
         <p>{subtitle}</p>
     </div>
@@ -27,4 +27,18 @@ const { title, subtitle } = Astro.props;
         width: 50%;
         font-size: 14px;
     }
+
+    .case-studies-item:hover h2 {
+        text-decoration:underline;
+    }
+
+    .image-container {
+        overflow: hidden;
+    }
+
+    .case-studies-item:hover slot {
+        transform: scale(1);
+    }
+
+
 </style>

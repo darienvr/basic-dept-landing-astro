@@ -3,7 +3,9 @@ const { description } = Astro.props;
 ---
 
 <div class="companies-container">
-    <slot name="svg" />
+    <div class="logo-container">
+        <slot name="svg" />
+    </div>
     <p>{description}</p>
 </div>
 
@@ -29,4 +31,15 @@ const { description } = Astro.props;
         text-align: center;
         color: inherit;
     }
+
+    .logo-container {
+        width: 200px;
+        transition: all 0.5s;
+        fill: #252422;
+    }
+    
+    .companies-container:hover .logo-container  {
+        transform: scale(1.1);
+    }
+
 </style>
