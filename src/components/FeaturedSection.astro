@@ -4,7 +4,7 @@ import FeaturedItem from "./FeaturedItem.astro";
 
 <section>
     <h2>Featured Engagements</h2>
-    <div>
+    <div class="featured-list">
         <FeaturedItem 
             title="GOOGLE" 
             text="Our embedded partnership with Google is as deep as it gets. We’re the lead creative agency for Google Store and provide strategy, design, and prototyping to other divisions. Learn more about our partnership here"
@@ -43,15 +43,48 @@ import FeaturedItem from "./FeaturedItem.astro";
         padding-bottom: 100px;
     }
 
-    div{
-        overflow-x: auto;
+    .featured-list {
+        overflow-x: scroll;
+        position: relative;
         display: flex;
         gap: 20px;
         cursor: grab;
     }
 
-    div:active {
-        cursor: grabbing;
+    .featured-list::-webkit-scrollbar {
+        width: 0;
     }
 
 </style>
+
+<script>
+
+    const slider = document.querySelector('.featured-list');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+    });
+    slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+    });
+    slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 3; //scroll-fast
+    slider.scrollLeft = scrollLeft - walk;
+    console.log(walk);
+    });
+
+</script>
