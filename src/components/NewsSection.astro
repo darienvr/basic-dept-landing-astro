@@ -1,11 +1,12 @@
 ---
 import News from "./News.astro";
+import Button from "./Button.astro";
 ---
 
 <section>
     <header>
         <h3>Featured news</h3>
-        <a href="#">View all</a>
+        <Button text="View All" />
     </header>
     <div>
         <News 
@@ -43,23 +44,6 @@ import News from "./News.astro";
         width: 300px;
         font-size: 2.5rem;
         text-transform: uppercase;
-    }
-
-    a {
-        font-size: 0.7rem;
-        border-radius: 15px;
-        border: 2px solid #000;
-        text-transform: uppercase;
-        padding: 5px 30px;
-        text-decoration: none;
-        font-weight: bold;
-        color: #000;
-        transition: all 0.5s;
-    }
-
-    a:hover {
-        background-color: #000;
-        color: #f4f4f4;
     }
 
 </style>
