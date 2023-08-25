@@ -16,22 +16,22 @@ import Button from './Button.astro';
             title="Patagonia"
             subtitle="An ecommerce experience driven by patagonia's brand mission"
         >
-            <img slot="picture" class="item-picture" src='https://cdn.sanity.io/images/8nn8fua5/production/931c4de4f3cbbeb30a5b65677a174f2980e44805-720x900.jpg?w=720&fm=webp&q=65' alt="#">
+            <img slot="picture" class="item-img" src='https://cdn.sanity.io/images/8nn8fua5/production/931c4de4f3cbbeb30a5b65677a174f2980e44805-720x900.jpg?w=720&fm=webp&q=65' alt="#">
         </CaseStudiesItem>
             
         <CaseStudiesItem 
             title="Wilson"
             subtitle="An ecommerce experience driven by patagonia's brand mission"
         >
-            <img slot="picture" class="item-picture" src="https://cdn.sanity.io/images/8nn8fua5/production/f1931ee572cd014ca5c3b5fe7e6054cfc0583624-720x900.jpg?w=720&fm=webp&q=65" alt="#">
+            <img slot="picture" class="item-img" src="https://cdn.sanity.io/images/8nn8fua5/production/f1931ee572cd014ca5c3b5fe7e6054cfc0583624-720x900.jpg?w=720&fm=webp&q=65" alt="#">
         </CaseStudiesItem>
 
         <CaseStudiesItem 
             title="Google Store"
             subtitle="An ecommerce experience driven by patagonia's brand mission"
         >
-            <video slot="picture" class="item-picture" autoplay muted loop src="https://cdn.sanity.io/files/8nn8fua5/production/9dc5a490bd877e8685f2089209db192188dd21e7.mp4">
-        </CaseStudiesItem>
+            <video slot="picture" class="item-img" autoplay muted loop src="https://cdn.sanity.io/files/8nn8fua5/production/9dc5a490bd877e8685f2089209db192188dd21e7.mp4">
+    </CaseStudiesItem>
     </div>
 </section>
 
@@ -82,14 +82,13 @@ import Button from './Button.astro';
         gap: 20px;
     }
 
-    .item-picture {
+    .item-img {
        width: 100%;
-       height: 100%;
-       transform: scale(1.1);
+       transform: scale(1.05);
        transition: transform 0.3s ease-in-out;
     }
 
-    .item-picture:hover {
+    .item-img:hover {
         transform: scale(1);
     }
 
