@@ -2,7 +2,7 @@
 import Button from "./Button.astro";
 ---
 
-<section>
+<section class="spotlight-section">
     <header>
         <h1>BASIC/DEPT® HELPS BRANDS ● CONNECT W/ CULTURE</h1>
         <p>Adweek <b>agency spotlight</b> </p>
@@ -12,11 +12,17 @@ import Button from "./Button.astro";
 </section>
 
 <style>
-    section {
-        padding: 150px 80px 100px 80px;
+    .spotlight-section {
+        padding: 150px 70px 100px 70px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
+        transition: background-color 3s, color 3s;
+    }
+
+    .spotlight-section.active {
+        background-color: #252422ff;
+        color: #f9cdcdff;
     }
 
     header {
@@ -57,3 +63,29 @@ import Button from "./Button.astro";
     }
 
 </style>
+
+<script>
+    const sections = document.querySelectorAll('.spotlight-section');
+    let activeSection = null;
+
+    window.addEventListener('scroll', () => {
+        sections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            const halfHeight = rect.height / 1.5;
+            const isInView = rect.top >= -halfHeight && rect.bottom <= window.innerHeight + halfHeight;
+
+            if (isInView) {
+                if (section !== activeSection) {
+                    if (activeSection) {
+                        activeSection.classList.remove('active');
+                    }
+                    section.classList.add('active');
+                    activeSection = section;
+                }
+            } else if (section === activeSection) {
+                section.classList.remove('active');
+                activeSection = null;
+            }
+        });
+    });
+</script>
