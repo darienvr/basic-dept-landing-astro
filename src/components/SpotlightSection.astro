@@ -17,12 +17,6 @@ import Button from "./Button.astro";
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
-        transition: background-color 3s, color 3s;
-    }
-
-    .spotlight-section.active {
-        background-color: #252422ff;
-        color: #f9cdcdff;
     }
 
     header {
@@ -79,11 +73,11 @@ import Button from "./Button.astro";
                     if (activeSection) {
                         activeSection.classList.remove('active');
                     }
-                    section.classList.add('active');
+                    document.documentElement.classList.add('active'); // Agregar la clase al html
                     activeSection = section;
                 }
             } else if (section === activeSection) {
-                section.classList.remove('active');
+                document.documentElement.classList.remove('active'); // Remover la clase del html
                 activeSection = null;
             }
         });
