@@ -12,7 +12,7 @@ const { description } = Astro.props;
 <style>
     .companies-container {
         height: 150px;
-        width: 180px;
+        max-width: 180px;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -25,7 +25,7 @@ const { description } = Astro.props;
     }
 
     .companies-container p {
-        font-size: 15px;
+        font-size: 0.8rem;
         text-transform: uppercase;
         font-weight: 600;
         text-align: center;
@@ -33,7 +33,7 @@ const { description } = Astro.props;
     }
 
     .logo-container {
-        width: 200px;
+        width: 180px;
         transition: all 0.5s;
         fill: var(--text-color);
     }
@@ -42,10 +42,15 @@ const { description } = Astro.props;
         transform: scale(1.1);
     }
 
-    @media (max-width: 1000px){
-		.logo-container {
+    @media (max-width: 768px) {
+
+        .companies-container {
+            justify-content: flex-start;
+        }
+
+        .logo-container {
             width: 80%;
         }
-	}
+    }
 
 </style>
