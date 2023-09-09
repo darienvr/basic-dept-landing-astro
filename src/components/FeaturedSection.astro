@@ -38,6 +38,7 @@ import FeaturedItem from "./FeaturedItem.astro";
     section {
         height: auto;
         padding-left: 80px;
+        border: 1px solid red;
     }
 
     h2 {
@@ -57,6 +58,18 @@ import FeaturedItem from "./FeaturedItem.astro";
 
     .featured-list::-webkit-scrollbar {
         width: 0;
+    }
+
+    @media (max-width: 1280px) {
+        section {
+            padding: 0 40px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            width: 100%;
+            padding: 50px 0;
+        }
     }
 
 </style>
