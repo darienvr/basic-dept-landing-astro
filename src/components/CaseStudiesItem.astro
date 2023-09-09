@@ -34,12 +34,22 @@ const { title, subtitle } = Astro.props;
 
     .image-container {
         overflow: hidden;
-        height: 540px;
+        height: auto;
     }
 
     .case-studies-item:hover slot {
         transform: scale(1);
     }
 
+    @media (max-width: 1280px){
+
+        .case-studies-item p {
+            width: 90%;
+        }
+
+        .image-container {
+            width: 400px;
+        }
+    }
 
 </style>

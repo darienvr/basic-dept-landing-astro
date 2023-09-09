@@ -44,11 +44,12 @@ import Button from './Button.astro';
     .home-header {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 150px;
+        gap: 130px;
     }
 
     .home-header p {
-        font-size: 35px;
+        font-size: 2.3rem;
+        line-height: 1.1;
         font-weight: 500;
         color: #252422;
         margin-bottom: 40px;
@@ -90,6 +91,44 @@ import Button from './Button.astro';
 
     .item-img:hover {
         transform: scale(1);
+    }
+
+    @media (max-width: 1280px){
+        .home-section {
+            padding: 0 40px;
+        }
+
+        .home-header {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .home-header p {
+            font-size: 1.3rem;
+            width: 50%;
+        }
+
+        .logo {
+            max-width: 500px;  
+        }
+
+        .case-studies {
+            overflow-x: scroll;
+        }
+
+        .item-img {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 768px){
+        .home-header p {
+            font-size: 1.3rem;
+            width: 95%;
+        }
+
+        
+
     }
 
 </style>
