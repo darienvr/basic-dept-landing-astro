@@ -81,7 +81,7 @@ import Button from "./Button.astro";
     window.addEventListener('scroll', () => {
         sections.forEach((section) => {
             const rect = section.getBoundingClientRect();
-            const halfHeight = rect.height / 1.5;
+            const halfHeight = rect.height / 1.8;
             const isInView = rect.top >= -halfHeight && rect.bottom <= window.innerHeight + halfHeight;
 
             if (isInView) {
