@@ -48,7 +48,13 @@ const { title, subtitle } = Astro.props;
         }
 
         .image-container {
-            width: 400px;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .case-studies-item {
+            width: 300px;
         }
     }
 
